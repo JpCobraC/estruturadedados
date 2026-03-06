@@ -10,10 +10,15 @@ class DynamicIntArray:
         return self.size == 0
 
     def get(self, index):
+        if index < 0 or index >= self.size:
+            raise IndexError("Índice errado.")
         return self.data[index]
 
     def set(self, index, value):
-        self.data[index] = value
+        if index < 0 or index >= self.size:
+            raise IndexError("Índice errado.")
+        else:
+            self.data[index] = value
 
     def append(self, value):
         if self.size == self.capacity:
