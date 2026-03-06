@@ -18,9 +18,8 @@ class DynamicIntArray:
     def append(self, value):
         if self.size == self.capacity:
             self._resize(self.capacity * 2)
-            
+
         self.data[self.size] = value
-        self.size += 1
 
     def _resize(self, new_capacity):
         if new_capacity > self.capacity:
