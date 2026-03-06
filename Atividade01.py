@@ -20,6 +20,8 @@ class DynamicIntArray:
             self._resize(self.capacity * 2)
 
         self.data[self.size] = value
+        self.size += 1
+
 
     def _resize(self, new_capacity):
         if new_capacity > self.capacity:
