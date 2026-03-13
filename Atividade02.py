@@ -37,12 +37,12 @@ class SingleLinkedList:
             print(lista)       # "10 -> 20 -> 30"
         """
         new_node = Node(data)
-        if self.head is None:          # Lista vazia
+        if self.head is None: 
             self.head = new_node
             self.tail = new_node
         else:
-            self.tail.next = new_node  # Liga o último nó ao novo
-            self.tail = new_node       # Atualiza tail
+            self.tail.next = new_node  
+            self.tail = new_node       
         self.size += 1
 
     def insert(self, index, data):
@@ -66,19 +66,18 @@ class SingleLinkedList:
         """
         new_node = Node(data)
 
-        if index <= 0:                  # Inserção no início
+        if index <= 0:               
             new_node.next = self.head
             self.head = new_node
-            if self.size == 0:          # Lista estava vazia
+            if self.size == 0: 
                 self.tail = new_node
             self.size += 1
             return
 
-        if index >= self.size:          # Inserção no final
+        if index >= self.size:         
             self.append(data)
             return
 
-        # Inserção no meio: percorre até o nó anterior ao índice
         trav = self.head
         for _ in range(index - 1):
             trav = trav.next
