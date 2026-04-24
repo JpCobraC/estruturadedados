@@ -11,31 +11,6 @@ class SingleLinkedList:
         self.size = 0         # Tamanho da lista
 
     def append(self, data):
-        """
-        Adiciona um novo nó (Node) ao final da lista encadeada.
-
-        Objetivo:
-            - Criar um novo nó contendo o valor fornecido.
-            - Inserir esse nó após o último elemento (tail).
-            - Atualizar os ponteiros `head`, `tail` e o contador `size`.
-            - Não esquecer de verificar se a lista está vazia e tratar de acordo.
-            - Utilizar as estruturas já criadas acima de NODE e SingleLinkedList, 
-                self.data, self.next, self.head, self.tail, self.size
-
-
-        Observações:
-            - Esse método deve ser O(1), pois usamos o ponteiro tail 
-              para evitar percorrer a lista inteira.
-            - É importante atualizar a tail corretamente, senão a lista
-              "perde" o final.
-
-        Exemplo esperado:
-            lista = SingleLinkedList()
-            lista.append(10)   # head=10, tail=10
-            lista.append(20)   # head=10, tail=20
-            lista.append(30)   # head=10, tail=30
-            print(lista)       # "10 -> 20 -> 30"
-        """
         new_node = Node(data)
         if self.head is None: 
             self.head = new_node
